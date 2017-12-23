@@ -1,0 +1,70 @@
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 16:57:15
+[DoS Attack: SYN/ACK Scan] from source: 54.213.50.219, port 443, Friday, December 22, 2017 16:45:32
+[DoS Attack: SYN/ACK Scan] from source: 54.213.50.219, port 443, Friday, December 22, 2017 16:45:21
+[DHCP IP: 192.168.1.114] to MAC address 50:c7:bf:08:02:23, Friday, December 22, 2017 16:37:13
+[DHCP IP: 192.168.1.112] to MAC address 50:c7:bf:08:01:95, Friday, December 22, 2017 16:37:11
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 16:27:43
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 16:27:39
+[DHCP IP: 192.168.1.112] to MAC address 50:c7:bf:08:01:95, Friday, December 22, 2017 16:24:27
+[DHCP IP: 192.168.1.110] to MAC address 50:c7:bf:08:02:23, Friday, December 22, 2017 16:24:26
+[DoS Attack: SYN/ACK Scan] from source: 160.153.142.215, port 80, Friday, December 22, 2017 15:57:01
+[DHCP IP: 192.168.1.104] to MAC address ac:37:43:a6:ed:c5, Friday, December 22, 2017 15:40:46
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:20
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:18
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:15
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:13
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:11
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 15:30:01
+[DoS Attack: SYN/ACK Scan] from source: 94.31.29.250, port 443, Friday, December 22, 2017 14:35:44
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 14:29:22
+[admin login failure] from source 192.168.1.98, Friday, December 22, 2017 14:29:15
+[remote login failure] from source 192.168.1.122, Friday, December 22, 2017 14:23:31
+[DoS Attack: TCP/UDP Chargen] from source: 185.94.111.1, port 35211, Friday, December 22, 2017 14:14:32
+[remote login] from source 192.168.1.122, Friday, December 22, 2017 14:11:32
+[DoS Attack: RST Scan] from source: 94.177.214.32, port 21117, Friday, December 22, 2017 14:08:44
+[DoS Attack: SYN/ACK Scan] from source: 54.213.50.219, port 443, Friday, December 22, 2017 14:05:29
+[DoS Attack: SYN/ACK Scan] from source: 93.174.93.229, port 80, Friday, December 22, 2017 13:47:06
+[DoS Attack: TCP/UDP Chargen] from source: 167.88.15.18, port 33690, Friday, December 22, 2017 13:46:05
+[remote login failure] from source 192.168.1.122, Friday, December 22, 2017 13:40:59
+[DoS Attack: ACK Scan] from source: 86.105.196.29, port 5816, Friday, December 22, 2017 13:36:31
+[DHCP IP: 192.168.1.110] to MAC address 50:c7:bf:08:02:23, Friday, December 22, 2017 13:34:35
+[DHCP IP: 192.168.1.102] to MAC address 50:c7:bf:08:01:95, Friday, December 22, 2017 13:34:34
+[DHCP IP: 192.168.1.111] to MAC address 00:04:20:f8:75:38, Friday, December 22, 2017 13:34:29
+[DHCP IP: 192.168.1.104] to MAC address ac:37:43:a6:ed:c5, Friday, December 22, 2017 13:34:28
+[remote login] from source 192.168.1.122, Friday, December 22, 2017 13:33:59
+[DHCP IP: 192.168.1.119] to MAC address bc:83:85:aa:42:a5, Friday, December 22, 2017 13:33:43
+[DHCP IP: 192.168.1.108] to MAC address 94:9f:3e:05:da:da, Friday, December 22, 2017 13:23:04
+[remote login] from source 192.168.1.122, Friday, December 22, 2017 13:13:12
+[UPnP set event: add_nat_rule] from source 192.168.1.32, Friday, December 22, 2017 13:07:27
+[UPnP set event: add_nat_rule] from source 192.168.1.30, Friday, December 22, 2017 13:06:57
+[UPnP set event: add_nat_rule] from source 192.168.1.31, Friday, December 22, 2017 13:06:53
+[DoS Attack: ACK Scan] from source: 31.13.76.66, port 443, Friday, December 22, 2017 12:58:32
+[UPnP set event: add_nat_rule] from source 192.168.1.32, Friday, December 22, 2017 12:56:45
+[DoS Attack: ACK Scan] from source: 31.13.76.66, port 443, Friday, December 22, 2017 12:56:32
+[UPnP set event: add_nat_rule] from source 192.168.1.30, Friday, December 22, 2017 12:56:17
+[UPnP set event: add_nat_rule] from source 192.168.1.31, Friday, December 22, 2017 12:56:13
+[DoS Attack: ACK Scan] from source: 31.13.76.66, port 443, Friday, December 22, 2017 12:52:31
+[DHCP IP: 192.168.1.122] to MAC address c4:85:08:1a:7d:13, Friday, December 22, 2017 12:52:30
+[DoS Attack: ACK Scan] from source: 31.13.76.66, port 443, Friday, December 22, 2017 12:48:30
+[DHCP IP: 192.168.1.109] to MAC address f4:f5:d8:a4:8f:9e, Friday, December 22, 2017 12:48:11
+[DHCP IP: 192.168.1.122] to MAC address c4:85:08:1a:7d:13, Friday, December 22, 2017 12:47:03
+[Time synchronized with NTP server] Friday, December 22, 2017 12:46:42
+[DoS Attack: RST Scan] from source: 208.65.192.203, port 443, Friday, December 22, 2017 12:46:32
+[DoS Attack: ACK Scan] from source: 31.13.76.66, port 443, Friday, December 22, 2017 12:46:30
+[DHCP IP: 192.168.1.113] to MAC address d0:52:a8:a4:f0:e8, Friday, December 22, 2017 12:46:23
+[DHCP IP: 192.168.1.118] to MAC address 0c:fe:45:30:16:c8, Friday, December 22, 2017 12:46:17
+[DHCP IP: 192.168.1.107] to MAC address 84:d6:d0:92:01:7b, Friday, December 22, 2017 12:46:15
+[DoS Attack: ACK Scan] from source: 208.65.192.203, port 443, Friday, December 22, 2017 12:46:12
+[DoS Attack: ACK Scan] from source: 162.125.34.129, port 443, Friday, December 22, 2017 12:46:06
+[DHCP IP: 192.168.1.106] to MAC address b0:b9:8a:55:eb:d3, Friday, December 22, 2017 12:46:03
+[DHCP IP: 192.168.1.109] to MAC address f4:f5:d8:a4:8f:9e, Friday, December 22, 2017 12:45:59
+[DHCP IP: 192.168.1.104] to MAC address ac:37:43:a6:ed:c5, Friday, December 22, 2017 12:45:47
+[DHCP IP: 192.168.1.103] to MAC address 50:c7:bf:08:02:23, Friday, December 22, 2017 12:45:45
+[DHCP IP: 192.168.1.102] to MAC address 50:c7:bf:08:01:95, Friday, December 22, 2017 12:45:44
+[DHCP IP: 192.168.1.121] to MAC address 00:fc:8b:db:3d:b7, Friday, December 22, 2017 12:45:43
+[DoS Attack: ACK Scan] from source: 162.125.34.129, port 443, Friday, December 22, 2017 12:45:41
+[DHCP IP: 192.168.1.111] to MAC address 00:04:20:f8:75:38, Friday, December 22, 2017 12:45:41
+[DHCP IP: 192.168.1.101] to MAC address 74:c6:3b:c6:fd:42, Friday, December 22, 2017 12:45:41
+[DHCP IP: 192.168.1.122] to MAC address c4:85:08:1a:7d:13, Friday, December 22, 2017 12:45:40
+[DHCP IP: 192.168.1.105] to MAC address ac:3a:7a:7d:7b:91, Friday, December 22, 2017 12:45:39
+[Initialized, firmware version: V2.1.1.16] Friday, December 22, 2017 12:45:23

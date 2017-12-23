@@ -1,0 +1,21 @@
+{
+  "name": "routerping",
+  "version": "1.0.0",
+  "description": "Store Orbi router logs at given interval",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dustin Jorge",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dateformat": "^3.0.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.4",
+    "single-line-log": "^1.1.2",
+    "threads": "^0.10.0"
+  }
+}
