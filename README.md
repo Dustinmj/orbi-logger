@@ -13,6 +13,9 @@ Also, a bootlog file is created which contains all initialization entries for th
   b. Router ip
   c. Username/Password
 4. Run server ( npm install && npm start )
+  a. Run as a daemon (on boot) with forever
+    i. npm install -g forever
+    ii. cd <dir> && forever start app.js
 5. URIS
   a. <ip>:<port>/ -- index
   b. <ip>:<port>/logs -- today's logs
