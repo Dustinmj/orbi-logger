@@ -4,6 +4,8 @@ const _ = require('lodash');
 const fs = require('fs-extra');
 const dateformat = require('dateformat');
 const path = require('path');
+const logCleanup = require('./log-cleanup');
+const filter = require('./log-filter');
 
 const PREFIX = process.env.LOG_FILE_PREFIX;
 const PATH = process.env.LOG_PATH;
@@ -33,6 +35,14 @@ exports.read = module.exports.read = date => {
 
 exports.write = module.exports.write = logdata => {
   const file = fullPath();
+  // only prune when we'll create a new file
+  fs.stat( file ).catch( err => {
+    logCleanup.prune(
+      path.resolve( PATH ),
+      process.env.KEEP_HISTORY_DAYS
+    );
+  });
+  // return promise
   return fs.ensureFile( file ).then( () => {
     return fs.readFile( file, 'utf8' ).then( currentLog => {
 
@@ -41,7 +51,18 @@ exports.write = module.exports.write = logdata => {
 
       // merge logs, deleting duplicates
       let aLog = _.union( nLog, cLog  );
+
       const newlines = aLog.length - nLog.length;
+
+      // if we're pruning login entries, do that now
+      if( process.env.PRUNE_LOGIN_ENTRIES == "true" ) {
+       aLog = filter.pruneLogin( aLog );
+      }
+
+      // remove all data that's not today
+      aLog = filter.pruneByToday( aLog );
+
+      // create new log
       const newLog = aLog.join('\n');
 
       // determine boot sequences
@@ -52,6 +73,7 @@ exports.write = module.exports.write = logdata => {
           boots.push( line );
         }
       });
+
       // write out boot sequences to boots file
       const bootlog = fullPath( null, '_bootlogs' );
       fs.ensureFile( bootlog ).then( () => {

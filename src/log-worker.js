@@ -22,12 +22,11 @@ exports.start = module.exports.start = () => {
             .then( newlines =>{
               done( newlines );
             }).catch( err => {
-              throw err;
+              Promise.reject( 'Could not write file.' );
             });
         }
       }).catch( err => {
-        console.log( err)
-        console.log( 'Could not reach Orbi.' );
+        console.log( `Could not reach Orbi: ${err}` );
       });
     }
     process();

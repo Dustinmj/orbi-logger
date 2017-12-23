@@ -6,17 +6,19 @@ Also, a bootlog file is created which contains all initialization entries for th
 ### Usage
 
 ```
-1. Have node/npm
-2. Change settings in .env
+1. Have node,npm,git
+2. Clone this repository
+3. Change settings in .env
   a. Ping time in seconds
   b. Router ip
   c. Username/Password
-3. Run server ( npm start )
-4. URIS
-  a. <ip>:<port>/logs -- today's logs
-  b. <ip>:<port>/bootlogs -- today's bootlogs
-  c. <ip>:<port>/logs/mm-dd-yy -- specific day's logs
-  d. <ip>:<port>/bootlogs/mm-dd-yy -- specifc day's bootlogs
+4. Run server ( npm install && npm start )
+5. URIS
+  a. <ip>:<port>/ -- index
+  b. <ip>:<port>/logs -- today's logs
+  c. <ip>:<port>/bootlogs -- today's bootlogs
+  d. <ip>:<port>/logs/mm-dd-yy -- specific day's logs
+  e. <ip>:<port>/bootlogs/mm-dd-yy -- specifc day's bootlogs
 ```
 
 ### Other Routers

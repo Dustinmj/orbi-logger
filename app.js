@@ -6,10 +6,18 @@ const express = require('express');
 const app = express();
 const logger = require('./src/log-writer');
 const worker = require('./src/log-worker');
+const scanFiles = require('./src/scan-files');
+const swig = require('swig');
+const dateformat = require('dateformat');
 
-const handleReq = (promise, res) => {
-  promise.then( data => {
-    res.send(`<pre>${data}</pre>`);
+const index = swig.compileFile( './views/index.swig' );
+const logPg = swig.compileFile( './views/log.swig' );
+
+const handleReq = (promise, res, title) => {
+  promise.then( log => {
+    let date = dateformat(new Date(), 'dddd, mmmm d, yyyy');
+    let out = logPg({ date, log, title });
+    res.send( out );
   }).catch( err => {
     res.status(404).send("Date not found (mm-dd-yy).")
   });
@@ -17,22 +25,29 @@ const handleReq = (promise, res) => {
 
 /* /logs/mm-dd-yy */
 app.get( '/logs/:date([0-9]{2}\-[0-9]{2}\-[0-9]{2})', (req, res) => {
-  handleReq( logger.read( req.params.date ), res );
+  handleReq( logger.read( req.params.date ), res, 'Orbi Log' );
 });
 
 /* /bootlogs/mm-dd-yy */
 app.get( '/bootlogs/:date([0-9]{2}\-[0-9]{2}\-[0-9]{2})', (req, res) => {
-  handleReq( logger.readBoot( req.params.date ), res );
+  handleReq( logger.readBoot( req.params.date ), res, 'Orbi Boot Log' );
 });
 
 /* /logs */
 app.get( '/logs', (req, res) => {
-  handleReq( logger.read(), res );
+  handleReq( logger.read(), res, 'Orbi Log' );
 });
 
 /* /bootlogs */
 app.get( '/bootlogs', (req, res) => {
-  handleReq( logger.readBoot(), res );
+  handleReq( logger.readBoot(), res, 'Orbi Boot Log' );
+});
+
+app.get( '/', (req, res) => {
+  scanFiles().then( dates => {
+    let out = index({ dates });
+    res.status(200).send(out);
+  });
 });
 
 app.use( (req, res) => {

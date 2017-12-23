@@ -20,11 +20,17 @@ exports.getLog = module.exports.getLog = () => {
             page += chunk;
         });
         res.on( 'end', () => {
-        //  resolve( page );
+          if( !filter.checkAuth( page ) ) {
+            reject( 'Authentication failed.' );
+          }
           resolve( filter.parse( page ) );
         });
       }
     );
+
+    req.setTimeout( 2000, () => {
+      req.abort();
+    });
 
     req.on( 'error', err => {
       reject( err );
