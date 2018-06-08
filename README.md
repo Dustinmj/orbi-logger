@@ -8,7 +8,7 @@ Also, a bootlog file is created which contains all initialization entries for th
 ```
 1. Have node,npm,git
 2. Clone this repository
-3. Change settings in .env
+3. Change settings in config.json
   a. Ping time in seconds
   b. Router ip
   c. Username/Password
