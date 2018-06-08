@@ -1,6 +1,9 @@
 'use strict'
 
-require('dotenv').config();
+// check user entered configuration
+require('./src/check-config.js');
+
+const { PING_TIME, PORT } = require('./config.json');
 
 const express = require('express');
 const app = express();
@@ -55,9 +58,9 @@ app.use( (req, res) => {
 });
 
 // start logging
-console.log( `Updating every ${process.env.PING_TIME} seconds.`);
+console.log( `Updating every ${PING_TIME} seconds.`);
 worker.start();
 
-app.listen( process.env.PORT, () => {
-  console.log(`App listening on ${process.env.PORT}.`)
+app.listen( PORT, () => {
+  console.log(`App listening on ${PORT}.`)
 });

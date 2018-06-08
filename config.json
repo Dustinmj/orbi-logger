@@ -1,0 +1,18 @@
+{
+
+  "PORT": "8080",
+
+  "ROUTER_USERNAME": "admin",
+  "ROUTER_PASSWORD": "password",
+
+  "ROUTER_LOG_URI": "/FW_log.htm",
+  "ROUTER_IP": "192.168.1.1",
+
+  "LOG_PATH": "logs",
+  "LOG_FILE_PREFIX": "Orbi_Log",
+
+  "PING_TIME": 5,
+  "KEEP_HISTORY_DAYS": 30,
+  "PRUNE_LOGIN_ENTRIES": true
+
+}

@@ -1,5 +1,11 @@
 'use strict'
 
+// ensure values
+let config = require('../config.json');
+const { LOG_FILE_PREFIX, LOG_PATH, KEEP_HISTORY_DAYS } = config;
+const PRUNE_LOGIN_ENTRIES = config.PRUNE_LOGIN_ENTRIES === "true"
+                          || config.PRUNE_LOGIN_ENTRIES === true;
+
 const _ = require('lodash');
 const fs = require('fs-extra');
 const dateformat = require('dateformat');
@@ -7,20 +13,17 @@ const path = require('path');
 const logCleanup = require('./log-cleanup');
 const filter = require('./log-filter');
 
-const PREFIX = process.env.LOG_FILE_PREFIX;
-const PATH = process.env.LOG_PATH;
-
 const getDate = () => {
   return dateformat( new Date(), 'mm-dd-yy' );
 }
 
 const getFileName = ( date, suffix = '' ) => {
   date = date || getDate();
-  return `${PREFIX}_${date}${suffix}`;
+  return `${LOG_FILE_PREFIX}_${date}${suffix}`;
 }
 
 const fullPath = ( date, suffix = '' ) => {
-  return path.resolve( PATH, getFileName( date, suffix ) );
+  return path.resolve( __dirname, LOG_PATH, getFileName( date, suffix ) );
 }
 
 exports.readBoot = module.exports.readBoot = date => {
@@ -38,8 +41,8 @@ exports.write = module.exports.write = logdata => {
   // only prune when we'll create a new file
   fs.stat( file ).catch( err => {
     logCleanup.prune(
-      path.resolve( PATH ),
-      process.env.KEEP_HISTORY_DAYS
+      path.resolve( LOG_PATH ),
+      KEEP_HISTORY_DAYS
     );
   });
   // return promise
@@ -55,7 +58,7 @@ exports.write = module.exports.write = logdata => {
       const newlines = aLog.length - nLog.length;
 
       // if we're pruning login entries, do that now
-      if( process.env.PRUNE_LOGIN_ENTRIES == "true" ) {
+      if( PRUNE_LOGIN_ENTRIES ) {
        aLog = filter.pruneLogin( aLog );
       }
 
@@ -81,7 +84,7 @@ exports.write = module.exports.write = logdata => {
             .catch( err => {
               console.log( 'Could not write boots file.' );
             });
-      })
+      });
 
       // return promise, main log file write
       return fs.writeFile( file, newLog, 'utf8' ).then( err => {

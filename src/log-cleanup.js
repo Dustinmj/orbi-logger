@@ -1,5 +1,7 @@
 'use strict'
 
+const { LOG_FILE_PREFIX } = require('../config.json');
+
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -42,10 +44,11 @@ exports.removeBootLogs = module.exports.removeBootLogs = removeBootLogs;
 
 exports.prune = module.exports.prune = (dir, number) => {
   console.log("Pruning Directory");
+  number = parseInt( number );
   // get files
   fs.readdir( dir+'/', 'utf8' ).then( ar => {
     if( ar.length * 2 > number ) {
-      ar = removeBootLogs(ar);
+      ar = removeBootLogs( ar );
       ar = sortByYYMMDD( ar );
       const rm = ar.slice( number, ar.length );
       for( let f of rm ) {
@@ -57,5 +60,7 @@ exports.prune = module.exports.prune = (dir, number) => {
         });
       }
     }
+  }).catch( err => {
+    console.log( err );
   });
 }

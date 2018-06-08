@@ -4,7 +4,8 @@ const { spawn } = require('threads');
 const logReader = require('./log-request');
 const logWriter = require('./log-writer');
 const stdout = require('single-line-log').stdout;
-const tick = process.env.PING_TIME * 1000;
+const { PING_TIME } = require('../config.json');
+const tick = PING_TIME * 1000;
 
 let thread;
 let dots='.';
@@ -19,7 +20,7 @@ exports.start = module.exports.start = () => {
       logReader.getLog().then( log => {
         if( log.length > 0 ) {
           logWriter.write( log )
-            .then( newlines =>{
+            .then( newlines => {
               done( newlines );
             }).catch( err => {
               Promise.reject( 'Could not write file.' );

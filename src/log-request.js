@@ -1,5 +1,12 @@
 'use strict'
 
+const {
+  ROUTER_IP,
+  ROUTER_LOG_URI,
+  ROUTER_USERNAME,
+  ROUTER_PASSWORD
+} = require('../config.json');
+
 const http = require('http');
 const filter = require('./log-filter');
 
@@ -7,12 +14,12 @@ exports.getLog = module.exports.getLog = () => {
 
   return new Promise( (resolve, reject) => {
     let page = '';
-
+    
     const req = http.get(
       {
-        host:process.env.ROUTER_IP,
-        path:process.env.ROUTER_LOG_URI,
-        auth:`${process.env.ROUTER_USERNAME}:${process.env.ROUTER_PASSWORD}`
+        host:ROUTER_IP,
+        path:ROUTER_LOG_URI,
+        auth:`${ROUTER_USERNAME}:${ROUTER_PASSWORD}`
       },
       res => {
         res.setEncoding('utf8');
